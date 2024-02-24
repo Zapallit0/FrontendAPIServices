@@ -6,7 +6,8 @@ import ShowBook from './pages/ShowBook.jsx'
 import EditBook from './pages/EditBook.jsx'
 import DeleteBook from './pages/DeleteBook.jsx'
 import Before2000Book from './pages/Before2000Book.jsx'
-
+import HomePage from './pages/PagesSafetyAdvisors/HomePage.jsx'
+import Services from './pages/PagesSafetyAdvisors/Services.jsx'
 function App() {
   return (
     <Routes>
@@ -16,6 +17,8 @@ function App() {
       <Route path='/books/edit/:id' element={<EditBook />} />
       <Route path='/books/delete/:id' element={<DeleteBook />} />
       <Route path='/books/before2000' element={<Before2000Book />} />
+      <Route path='/HomePage' element={<HomePage/>}/>
+      <Route path='/HomePage/Engineers' element={<Services />}/>
     </Routes>
   )
 }

@@ -1,10 +1,10 @@
 import React from 'react'
-import imgService from '../assets/ImgsRef/Services.webp'
+import imgService from '../../assets/ImgsRef/Services.webp'
+
 const SliderImgs=()=> {
   return (
     <div id="default-carousel" className="relative w-full" data-carousel="slide">
         <div className="relative h-56 ">
-
             <div className="hidden duration-700 ease-in-out" data-carousel-item>
                 <img src={imgService} className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
             </div>

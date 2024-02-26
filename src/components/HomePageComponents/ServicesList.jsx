@@ -1,5 +1,5 @@
 import React,{useEffect, useState} from 'react'
-import Spinner from './spinner';
+import Spinner from '../spinner';
 import axios from 'axios';
 
 function Services() {

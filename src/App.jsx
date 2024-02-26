@@ -6,8 +6,12 @@ import ShowBook from './pages/ShowBook.jsx'
 import EditBook from './pages/EditBook.jsx'
 import DeleteBook from './pages/DeleteBook.jsx'
 import Before2000Book from './pages/Before2000Book.jsx'
-import HomePage from './pages/PagesSafetyAdvisors/HomePage.jsx'
-import Services from './pages/PagesSafetyAdvisors/Services.jsx'
+//SafetyAdvisors
+import MainPage from './pages/MainPage.jsx'
+import EngineersPage from './pages/EngineersPage.jsx'
+import FormNewEngineer from './pages/CreateEngineer.jsx'
+import EditEngineer from './pages/EditEngineer.jsx'
+
 function App() {
   return (
     <Routes>
@@ -17,8 +21,12 @@ function App() {
       <Route path='/books/edit/:id' element={<EditBook />} />
       <Route path='/books/delete/:id' element={<DeleteBook />} />
       <Route path='/books/before2000' element={<Before2000Book />} />
-      <Route path='/HomePage' element={<HomePage/>}/>
-      <Route path='/HomePage/Engineers' element={<Services />}/>
+
+    {/* Paginas de Safety Advisors*/}
+      <Route path='/HomePage' element={<MainPage/>}/>
+      <Route path='/HomePage/Engineers' element={<EngineersPage />}/>
+      <Route path='/HomePage/Engineers/Add' element={<FormNewEngineer />} />
+      <Route path='/HomePage/Engineers/:id' element={<EditEngineer/>}/>
     </Routes>
   )
 }

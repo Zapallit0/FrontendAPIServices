@@ -28,7 +28,7 @@ function EngineersList() {
             </div>
             <div className="flow-root">
                     <ul role="list" className="divide-y divide-gray-200 dark:divide-gray-700">
-                        {engineers.map((engineer,index)=>(
+                        {engineers.slice(0,5).map((engineer,index)=>(
                             <li key={index} className="py-3 sm:py-4">
                                 <div className="flex items-center">
                                     <div className="flex-shrink-0">

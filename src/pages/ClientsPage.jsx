@@ -4,6 +4,7 @@ import ButtonAddEngineer from '../components/EngineerPageComponets/ButtonAddEngi
 import NavBar from '../components/GeneralComponents/NavBar';
 import SideBar from '../components/GeneralComponents/SideBar';
 import ClientsCompleteList from '../components/ClientesPageComponents/ClientsCompleteList';
+import BackButton from '../components/GeneralComponents/BackButton';
 
 function ClientsPage() {
     return (
@@ -16,7 +17,8 @@ function ClientsPage() {
                 <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl ">Clientes</h1>
             </div>
             <ClientsCompleteList />
-            <div className="grid grid-cols-4 gap-4 mb-4">
+            <div className="grid gap-4 mb-4 grid-cols-2 md:grid-cols-4">
+                <BackButton destinations={""}/>
                 <ButtonAddEngineer destination={'/HomePage/Clients/Add'} type={"Clientes"} />
             </div>
         </div>

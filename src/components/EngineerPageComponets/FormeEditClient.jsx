@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import axios from 'axios'
 import { useNavigate, useParams} from 'react-router-dom';
+import BackButton from '../GeneralComponents/BackButton';
 
 function FormNewClient() {
     const[loading,setLoading] =useState(false);
@@ -31,7 +32,8 @@ function FormNewClient() {
                 console.log(error);
             })
         }
-    )
+    ,[])
+
     const handleEditClient=()=>{
         const data={
             nombre:nombre,
@@ -45,7 +47,24 @@ function FormNewClient() {
             }
         };
         setLoading(true);
-        axios.post('http://localhost:5555/clients',data,{
+        axios.put(`http://localhost:5555/clients/${id}`,data,{
+            timeout: 5000
+        })
+        .then(()=>{
+            setLoading(false);
+            navigate('/HomePage/Clients')
+        })
+        .catch((error)=>{
+            setLoading(false);
+            console.log(error);
+            alert(error)
+        })
+    }
+
+
+    const deleteClient=()=>{
+        setLoading(false);
+        axios.delete(`http://localhost:5555/clients/${id}`,{
             timeout: 5000
         })
         .then(()=>{
@@ -98,7 +117,12 @@ function FormNewClient() {
                 <input type="text" value={RepresentanteCargo} onChange={(e)=>setRepresentanteCargo(e.target.value)}  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="123-45-678" required />
             </div>
         </div>
-        <button onClick={handleEditClient} className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Editar Datos</button>
+        <div className="grid grid-cols-3 gap-4 mb-4">
+                <BackButton destinations={"clients"}/>
+                <button onClick={handleEditClient} className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Editar Datos</button>
+                <button onClick={deleteClient} className="ml-4 text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">Eliminar Cliente</button>
+        </div>
+        
     </div>
 
   )

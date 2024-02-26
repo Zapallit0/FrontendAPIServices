@@ -19,20 +19,20 @@ function ClientsList() {
         })
     },[])
   return (
-        <div class="relative overflow-x-auto mb-4 rounded-md">
-            <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 bg-gray-800">
-                <thead class="text-xs text-gray-900 uppercase dark:text-gray-400">
+        <div className="relative overflow-x-auto mb-4 rounded-md">
+            <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 bg-gray-800">
+                <thead className="text-xs text-gray-900 uppercase dark:text-gray-400">
                     <tr>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" className="px-6 py-3">
                             Nombre
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" className="px-6 py-3">
                             Rubro
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" className="px-6 py-3">
                             Representante
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" className="px-6 py-3">
                             Servicios Pedidos
                         </th>
                     </tr>
@@ -40,17 +40,17 @@ function ClientsList() {
                 <tbody>
                     {
                     loading?(<Spinner />):clients.map((client,index) => (
-                        <tr key={index} class="bg-white dark:bg-gray-800">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <tr key={index} className="bg-white dark:bg-gray-800">
+                            <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                 {client.nombre}
                             </th>
-                            <td class="px-6 py-4">
+                            <td className="px-6 py-4">
                                 {client.Rubro}
                             </td>
-                            <td class="px-6 py-4">
+                            <td className="px-6 py-4">
                                 {client.Representante.nombre}
                             </td>
-                            <td class="px-6 py-4">
+                            <td className="px-6 py-4">
                                 {client.Servicios_Pedidos}
                             </td>
                         </tr>

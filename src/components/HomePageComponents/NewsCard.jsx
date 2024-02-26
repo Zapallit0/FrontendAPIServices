@@ -4,7 +4,7 @@ import imgService from '../../assets/ImgsRef/Services.webp'
 
 function NewsCard() {
   return (
-        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div class="max-w-screen-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <Link href="#">
                 <img class="rounded-t-lg" src={imgService} alt="" />
             </Link>

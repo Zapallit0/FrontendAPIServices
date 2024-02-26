@@ -6,11 +6,18 @@ import ShowBook from './pages/ShowBook.jsx'
 import EditBook from './pages/EditBook.jsx'
 import DeleteBook from './pages/DeleteBook.jsx'
 import Before2000Book from './pages/Before2000Book.jsx'
+
 //SafetyAdvisors
 import MainPage from './pages/MainPage.jsx'
+//Ingenieros
 import EngineersPage from './pages/EngineersPage.jsx'
 import FormNewEngineer from './pages/CreateEngineer.jsx'
 import EditEngineer from './pages/EditEngineer.jsx'
+
+//Clientes
+import ClientsPage from './pages/ClientsPage.jsx' 
+import EditClient from './pages/EditClient.jsx'
+import CreateClient from './pages/CreateClient.jsx'
 
 function App() {
   return (
@@ -24,9 +31,16 @@ function App() {
 
     {/* Paginas de Safety Advisors*/}
       <Route path='/HomePage' element={<MainPage/>}/>
+
+      {/* Rutas Ingenieros */}
       <Route path='/HomePage/Engineers' element={<EngineersPage />}/>
       <Route path='/HomePage/Engineers/Add' element={<FormNewEngineer />} />
       <Route path='/HomePage/Engineers/:id' element={<EditEngineer/>}/>
+      
+      {/* Rutas Clientes */}
+      <Route path='/HomePage/Clients' element={<ClientsPage/>}/>
+      <Route path='/HomePage/Clients/Add' element={<CreateClient/>} />
+      <Route path='/HomePage/Clients/:id' element={<EditClient />} />
     </Routes>
   )
 }

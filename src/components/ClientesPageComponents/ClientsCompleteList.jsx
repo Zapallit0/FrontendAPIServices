@@ -1,8 +1,9 @@
-import React,{useState, useEffect} from 'react';
+import React, {useState, useEffect} from 'react'
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Spinner from '../spinner';
 
-function ClientsList() {
+function ClientsCompleteList() {
     const[clients,setClients]=useState([]);
     const[loading,setLoading] = useState(false);
 
@@ -35,6 +36,9 @@ function ClientsList() {
                         <th scope="col" class="px-6 py-3">
                             Servicios Pedidos
                         </th>
+                        <th scope="col" class="px-6 py-3">
+                            Editar
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -53,13 +57,15 @@ function ClientsList() {
                             <td class="px-6 py-4">
                                 {client.Servicios_Pedidos}
                             </td>
+                            <td className="px-6 py-4">
+                            <Link to={`/HomePage/Clients/${client._id}`} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</Link>
+                            </td>
                         </tr>
                     ))}
                 </tbody>
             </table>
         </div>
-
   )
 }
 
-export default ClientsList
+export default ClientsCompleteList

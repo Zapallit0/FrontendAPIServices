@@ -16,7 +16,7 @@ function ClientsPage() {
             <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-4">
                 <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl ">Clientes</h1>
             </div>
-            <ClientsCompleteList />
+                <ClientsCompleteList />
             <div className="grid gap-4 mb-4 grid-cols-2 md:grid-cols-4">
                 <BackButton destinations={""}/>
                 <ButtonAddEngineer destination={'/HomePage/Clients/Add'} type={"Clientes"} />

@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import Spinner from './spinner';
-import BackButton from './GeneralComponents/BackButton';
+import Spinner from '../spinner';
+import BackButton from '../GeneralComponents/BackButton';
 
 const FormsNewEngineer=()=> {
     const [loading, setLoading]=useState(false);

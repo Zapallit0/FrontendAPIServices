@@ -1,11 +1,11 @@
 import React from 'react'
 import {Routes,Route} from 'react-router-dom'
-import Home from './pages/Home.jsx'
-import CreateBook from './pages/CreateBooks.jsx'
-import ShowBook from './pages/ShowBook.jsx'
-import EditBook from './pages/EditBook.jsx'
-import DeleteBook from './pages/DeleteBook.jsx'
-import Before2000Book from './pages/Before2000Book.jsx'
+import Home from './pages/BooksTemplates/Home.jsx'
+import CreateBook from './pages/BooksTemplates/CreateBooks.jsx'
+import ShowBook from './pages/BooksTemplates/ShowBook.jsx'
+import EditBook from './pages/BooksTemplates/EditBook.jsx'
+import DeleteBook from './pages/BooksTemplates/DeleteBook.jsx'
+import Before2000Book from './pages/BooksTemplates/Before2000Book.jsx'
 
 //SafetyAdvisors
 import MainPage from './pages/MainPage.jsx'

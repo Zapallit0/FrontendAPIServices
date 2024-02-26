@@ -1,27 +1,29 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import Spinner from "../components/spinner.jsx";
+import React,{useState, useEffect} from 'react'
+import BackButton from '../../components/BackButton'
+import Spinner from '../../components/spinner'
 import { Link } from "react-router-dom";
+import axios from 'axios'
 import { AiOutlineEdit } from "react-icons/ai";
 import { BsInfoCircle } from "react-icons/bs";
 import { MdOutlineAddBox, MdOutlineDelete } from "react-icons/md";
+import { useNavigate, useParams} from 'react-router-dom'
 
-const Home=()=> {
-  const [books, setBooks] = useState([]);
-  const [loading, setLoading] = useState(false);
-  useEffect(() => {
-    setLoading(true);
-    axios
-      .get("http://localhost:5555/books")
-      .then((response) => {
-        setBooks(response.data.books);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.log(error);
-        setLoading(false);
-      });
-  }, []);
+const Before2000Book=()=>{
+    const [books, setBooks] = useState([]);
+    const [loading, setLoading] = useState(false);
+    
+    useEffect(()=>{
+        setLoading(true);
+        axios.get(`http://localhost:5555/books/before2000`)
+        .then((response)=>{
+            setBooks(response.data.books);
+            setLoading(false);
+        }).catch((error)=>{
+          setLoading(false);
+          alert('an error happened Pleasd');
+          console.error(error);
+        })
+    },[])
   return (
     <div className="p-4">
       <div className="flex justify-between items-center">
@@ -81,7 +83,7 @@ const Home=()=> {
         </table>
       )}
     </div>
-  );
+  )
 }
 
-export default Home;
+export default Before2000Book

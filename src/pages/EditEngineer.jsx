@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Logo from '../assets/Logo.svg'
-import FormEditEngineer from '../components/FormsEditEngineer';
+import FormEditEngineer from '../components/EngineerPageComponets/FormsEditEngineer';
 import ButtonEngineerData from '../components/EngineerPageComponets/ButtonEngineerData';
 import NavBar from '../components/GeneralComponents/NavBar';
 import SideBar from '../components/GeneralComponents/SideBar';

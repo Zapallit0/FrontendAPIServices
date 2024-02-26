@@ -1,30 +1,14 @@
 import React,{useEffect,useState} from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-import BackButton from '../components/BackButton.jsx';
-import Spinner from '../components/spinner.jsx';
-import { useNavigate } from 'react-router-dom'
+import BackButton from '../../components/BackButton.jsx';
+import Spinner from '../../components/spinner.jsx';
 
-const DeleteBook=()=>{
-  const[book, setBooks]=useState({});
-  const[loading,setLoading] = useState(false);
+const ShowBook=()=>{
+  const [book, setBooks]=useState({});
+  const [loading,setLoading]=useState(false);
   const {id}=useParams();
-  const navigate=useNavigate(true);
-  const deletebook=()=>{
-    setLoading(true);
-    axios
-      .delete(`http://localhost:5555/books/${id}`)
-      .then(()=>{
-        setLoading(false);
-        navigate('/');
-      })
-      .catch((error)=>{
-        setLoading(false);
-        alert('An error happened. Please Check de console');
-        console.log(error)
-      })
-  }
-
+ 
   useEffect(() =>{
     setLoading(true);
     axios.get(`http://localhost:5555/books/${id}`)
@@ -37,7 +21,6 @@ const DeleteBook=()=>{
       setLoading(false);
     });
   },[])
-
 
   return (
     <div className="p-4">
@@ -73,11 +56,8 @@ const DeleteBook=()=>{
             </div>
           </div>
       )}
-      <button className='p-2 bg-sky-300 m-8' onClick={deletebook}>
-          Save
-        </button>
     </div>
   )
 }
 
-export default DeleteBook
+export default ShowBook

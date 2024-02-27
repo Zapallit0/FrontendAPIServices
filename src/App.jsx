@@ -18,6 +18,8 @@ import EditEngineer from './pages/EditEngineer.jsx'
 import ClientsPage from './pages/ClientsPage.jsx' 
 import EditClient from './pages/EditClient.jsx'
 import CreateClient from './pages/CreateClient.jsx'
+import ServicesPage from './pages/ServicesPage.jsx'
+import CreateService from './pages/CreateService.jsx'
 
 function App() {
   return (
@@ -41,6 +43,10 @@ function App() {
       <Route path='/HomePage/Clients' element={<ClientsPage/>}/>
       <Route path='/HomePage/Clients/Add' element={<CreateClient/>} />
       <Route path='/HomePage/Clients/:id' element={<EditClient />} />
+
+      {/* Rutas Servicios */}
+      <Route path='/HomePage/Services' element={<ServicesPage />}/>
+      <Route path='/HomePage/Services/Add' element={<CreateService />}/>
     </Routes>
   )
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import NavBar from '../components/GeneralComponents/NavBar'
 import SideBar from '../components/GeneralComponents/SideBar'
-import FormNewClient from '../components/EngineerPageComponets/FormNewClient'
+import FormNewClient from '../components/ClientesPageComponents/FormNewClient'
 
 function CreateClient() {
   return (

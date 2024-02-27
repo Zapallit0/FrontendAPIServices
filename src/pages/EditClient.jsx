@@ -1,7 +1,7 @@
 import React from 'react'
 import NavBar from '../components/GeneralComponents/NavBar'
 import SideBar from '../components/GeneralComponents/SideBar'
-import FormsEditClient from '../components/EngineerPageComponets/FormeEditClient'
+import FormsEditClient from '../components/ClientesPageComponents/FormeEditClient'
 
 function EditClient() {
   return (
